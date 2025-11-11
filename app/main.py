@@ -23,3 +23,8 @@ def create_app() -> FastAPI:
 
 
 app = create_app()
+
+@app.get('/health-check')
+async def health_check():
+    """Health check endpoint"""
+    return {"message": "Karo API Service is running."}
