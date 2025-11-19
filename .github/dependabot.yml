@@ -1,0 +1,26 @@
+# dependatbot.yml
+version: 2
+updates:
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "10:10"
+    open-pull-requests-limit: 5
+    groups:
+      all-deps:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+      major-deps:
+        patterns:
+          - "*"
+        update-types:
+          - "major"
+    labels:
+      - "dependencies"
+    reviewers:
+      - "vthanhduong"
+    assignee
